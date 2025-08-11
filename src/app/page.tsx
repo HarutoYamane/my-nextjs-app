@@ -1,4 +1,5 @@
 import KeyVisual from "@/components/top/KeyVisual";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (

@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 import { SITE_TITLE, SITE_DESCRIPTION, BASE_URL } from "@/consts";
 import "@/globals.css";
 
@@ -55,7 +57,9 @@ export default function RootLayout({ children }: Props) {
       </head>
 
       <body className="font-atkinson m-0 p-0 text-left bg-background text-text text-base leading-[1.7] break-words">
+        <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );

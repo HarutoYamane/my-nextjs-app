@@ -25,3 +25,11 @@
     font-display: swap;
   }
 }
+
+@layer utilities {
+  .gradient-text {
+    @apply font-bold bg-gradient-text bg-clip-text text-transparent;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}

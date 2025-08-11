@@ -8,6 +8,7 @@ type Props = {
 };
 
 export const metadata: Metadata = {
+  metadataBase: new URL(BASE_URL || "http://localhost:3000"),
   title: { default: SITE_TITLE, template: `%s | ${SITE_TITLE}` },
   description: SITE_DESCRIPTION,
   openGraph: {
@@ -18,7 +19,7 @@ export const metadata: Metadata = {
     description: SITE_DESCRIPTION,
     images: [
       {
-        url: `${BASE_URL}/blog-placeholder-1.jpg`,
+        url: "/blog-placeholder-1.jpg",
         width: 1200,
         height: 630,
         alt: "OG Image",
@@ -29,7 +30,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: SITE_TITLE,
     description: SITE_DESCRIPTION,
-    images: [`${BASE_URL}/blog-placeholder-1.jpg`],
+    images: ["/blog-placeholder-2.jpg"],
   },
 };
 

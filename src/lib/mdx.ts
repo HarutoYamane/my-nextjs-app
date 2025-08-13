@@ -60,3 +60,21 @@ export async function getPostSlugs(slug: string): Promise<Post> {
     content: mdxSource.content,
   };
 }
+
+export async function getAllPosts(): Promise<Post[]> {
+  const files = fs.readdirSync(postsDirectory)
+  const posts = await Promise.all(
+    files
+      .filter((file) => file.endsWith('.mdx') || file.endsWith('.md'))
+      .map(async (file) => {
+        const slug = file.replace(/\.(mdx|md)$/, '')
+        const post = await getPostSlugs(slug)
+
+        return post
+      })
+  )
+
+  return posts.sort((a, b) => {
+    return new Date(b.meta.pubDate).getTime() - new Date(a.meta.pubDate).getTime()
+  })
+}
